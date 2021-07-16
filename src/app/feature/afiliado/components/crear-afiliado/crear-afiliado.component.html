@@ -1,1 +1,77 @@
-<p>crear-afiliado works!</p>
+
+<form [formGroup]="afiliadoForm">
+
+    <div class="form-group row">
+      <div class="form-group col-md-5">
+        <label for="nombre">nombre</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" maxlength="200"
+          formControlName="nombre">
+      </div>
+
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-6">
+        <label for="tipoDocumento">tipoDocumento</label>
+    <select class="combobox form-control" name="tipoDocumento" id="tipoDocumento" formControlName="tipoDocumento">
+      <option value="CC" selected="selected">cédula de ciudadanía (CC)</option>
+      <option value="CI">cédula de identidad (CI)</option>
+      <option value="TI"> tarjeta de identidad (TI)</option>
+      <option value="TP"> tarjeta pasaporte (TP)</option> 
+      <option value="RC">registro civil (RC)</option> 
+      <option value="CE">cédula de extranjería (CE)</option> 
+      <option value="DNI">documento nacional de identidad (DNI)</option> 
+      <option value="DUI"> documento único de identidad (DUI)</option> 
+      <option value="ID">identificación (ID)</option> 
+  </select> 
+      </div>
+    </div>
+    <div class="form-group row">
+      <!-- <div class="form-group col-md-5">
+        <label for="tipoDocumento">tipoDocumento</label>
+        <input type="text" class="form-control" name="tipoDocumento" id="tipoDocumento" maxlength="3"
+          formControlName="tipoDocumento">
+      </div> -->
+
+      <div class="form-group col-md-5">
+        <label for="numeroDocumento">numeroDocumento</label>
+        <input type="text" class="form-control" name="numeroDocumento" id="numeroDocumento" maxlength="17"
+          formControlName="numeroDocumento">
+      </div>
+
+      <div class="form-group col-md-5">
+        <label for="fechaNacimiento">fechaNacimiento</label>
+        <input type="text" class="form-control" name="fechaNacimiento" id="fechaNacimiento" maxlength="80"
+          formControlName="fechaNacimiento">
+      </div>
+
+      <div class="form-group col-md-5">
+        <label for="email">email</label>
+        <input type="text" class="form-control" name="email" id="email" maxlength="17"
+          formControlName="email">
+      </div>
+
+      <div class="form-group col-md-5">
+        <label for="direccion">direccion</label>
+        <input type="text" class="form-control" name="direccion" id="direccion" maxlength="17"
+          formControlName="direccion">
+      </div>
+
+      <div class="form-group col-md-5">
+        <label for="telefono">telefono</label>
+        <input type="text" class="form-control" name="telefono" id="telefono" maxlength="17"
+          formControlName="telefono">
+      </div>
+      <div class="form-group col-md-5">
+        <label for="fechaRegistro">fechaRegistro</label>
+        <input type="text" class="form-control" name="fechaRegistro" id="fechaRegistro" maxlength="80"
+          formControlName="fechaRegistro">
+      </div>
+      
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-6">
+        <button class="btn btn-primary" id="btnCrearEntrada" role="button" (click)="crear()" type="submit">Crear</button>
+      </div>
+    </div>
+
+</form>

@@ -13,6 +13,7 @@ export class AppComponent {
     { url: '/home', nombre: 'Home' },
     { url: '/producto', nombre: 'producto' },
     { url: '/afiliado', nombre: 'Afiliado' },
+    { url: '/registroafiliado', nombre: 'Registrar afiliado' },
     { url: '/entrada', nombre: 'Entrada' }
 
 

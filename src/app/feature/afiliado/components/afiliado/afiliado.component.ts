@@ -10,8 +10,7 @@ import { Afiliado } from '../../shared/model/afiliado';
 })
 export class AfiliadoComponent implements OnInit {
   public listaAfiliados: Observable<Afiliado[]> | undefined;
-  afiliadoL: Afiliado;
-
+  
   constructor(private afiliadoService: AfiliadoService) { }
 
   ngOnInit(): void {
