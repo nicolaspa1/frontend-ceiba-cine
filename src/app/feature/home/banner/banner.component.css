@@ -1,0 +1,10 @@
+.box {
+  }
+  
+  .box .img-slide { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52%;
+    height: 52%;
+  }
