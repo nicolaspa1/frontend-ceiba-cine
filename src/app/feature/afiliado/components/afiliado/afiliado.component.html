@@ -23,30 +23,18 @@
                     <th>Telefono</th>
                     <th>Fecha Registro</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Nicolas</td>
-                        <td>cc</td>
-                        <td>1231</td>
-                        <td>13/08/2000</td>
-                        <td>r</td>
-                        <td>r</td>
-                        <td>r</td>
-                        <td>r</td>           
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Nicolas</td>
-                        <td>cc</td>
-                        <td>1231</td>
-                        <td>13/08/2000</td>
-                        <td>r</td>
-                        <td>r</td>
-                        <td>r</td>
-                        <td>r</td>           
-                    </tr>
-    
+                <tbody class="afiliados">
+                    <tr  *ngFor="let item of listaAfiliados | async">
+                        <td>{{item.id}}</td>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.tipoDocumento}}</td>
+                        <td>{{item.numeroDocumento}}</td>
+                        <td>{{item.fechaNacimiento | date }}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.direccion}}</td>
+                        <td>{{item.telefono}}</td>
+                        <td>{{item.fechaRegistro | date }}</td>           
+                    </tr>    
                 </tbody>
             </table>
         </div>

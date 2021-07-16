@@ -3,10 +3,12 @@ import { HttpService } from '@core-service/http.service';
 import { environment } from 'src/environments/environment';
 import { Afiliado } from '../model/afiliado';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AfiliadoService {
 
-  constructor(protected http: HttpService) {}
+  constructor(private http: HttpService) {}
 
   public consultar() {
     return this.http.doGet<Afiliado[]>(`${environment.endpoint}/afiliados`, this.http.optsName('consultar afiliados'));

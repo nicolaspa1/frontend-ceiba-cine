@@ -15,6 +15,7 @@ import { AfiliadoComponent } from './feature/afiliado/components/afiliado/afilia
 import { CrearEntradaComponent } from './feature/entrada/components/crear-entrada/crear-entrada.component';
 import { EntradaComponent } from './feature/entrada/components/entrada/entrada.component';
 import { BannerComponent } from './feature/home/banner/banner.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -29,13 +30,15 @@ import { BannerComponent } from './feature/home/banner/banner.component';
     CrearEntradaComponent,
     EntradaComponent,
     BannerComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ProductoModule,
     CoreModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [CookieService],
     bootstrap: [AppComponent],
