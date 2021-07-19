@@ -4,11 +4,12 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="content animated fadeInDown">
+    <div class="">
+        <div class=" animated fadeInDown">
             <header>
                 <h1 class="tittle">Manejo De Afiliados</h1>
             </header>
+
             <table class="table">
                 <thead>
                     <th>Id</th>
@@ -20,18 +21,27 @@
                     <th>Direccion</th>
                     <th>Telefono</th>
                     <th>Fecha Registro</th>
+                    <th>Opciones</th>
                 </thead>
                 <tbody class="afiliados">
-                    <tr  *ngFor="let item of listaAfiliados | async">
-                        <td>{{item.id}}</td>
-                        <td>{{item.nombre}}</td>
-                        <td>{{item.tipoDocumento}}</td>
-                        <td>{{item.numeroDocumento}}</td>
-                        <td>{{item.fechaNacimiento | date }}</td>
-                        <td>{{item.email}}</td>
-                        <td>{{item.direccion}}</td>
-                        <td>{{item.telefono}}</td>
-                        <td>{{item.fechaRegistro | date }}</td>  
+                    <tr  *ngFor="let afiliado of listaAfiliados | async">
+                        <td>{{afiliado.id}}</td>
+                        <td>{{afiliado.nombre}}</td>
+                        <td>{{afiliado.tipoDocumento}}</td>
+                        <td>{{afiliado.numeroDocumento}}</td>
+                        <td>{{afiliado.fechaNacimiento | date }}</td>
+                        <td>{{afiliado.email}}</td>
+                        <td>{{afiliado.direccion}}</td>
+                        <td>{{afiliado.telefono}}</td>
+                        <td>{{afiliado.fechaRegistro | date }}</td>  
+                        <td>
+                            <div class="text-center">
+                                <div class="btn-group">
+                                    <button class="btn btn-primary btnEditar">Editar</button>
+                                    <button class="btn btn-danger btnEliminar"  (click)="confirmacionEliminar(afiliado.id)">Eliminar</button>
+                                </div>
+                            </div>
+                        </td>
                     </tr>    
                 </tbody>
             </table>

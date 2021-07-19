@@ -16,6 +16,8 @@ import { CrearEntradaComponent } from './feature/entrada/components/crear-entrad
 import { EntradaComponent } from './feature/entrada/components/entrada/entrada.component';
 import { BannerComponent } from './feature/home/banner/banner.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+
 
 
 
@@ -41,7 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [CookieService],
+  providers: [CookieService,DatePipe],
     bootstrap: [AppComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

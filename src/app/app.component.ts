@@ -14,7 +14,8 @@ export class AppComponent {
     { url: '/producto', nombre: 'producto' },
     { url: '/afiliado', nombre: 'Afiliado' },
     { url: '/registroafiliado', nombre: 'Registrar afiliado' },
-    { url: '/entrada', nombre: 'Entrada' }
+    { url: '/entrada', nombre: 'Entrada' },
+    { url: '/ventaentrada', nombre: 'Venta Entrada' }
 
 
     
