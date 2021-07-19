@@ -1,12 +1,48 @@
-.box {
-  }
-  
-  .box .img-slide { 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 28%;
-    
-  } 
+html,
 
-  
+section {
+  background: #000;
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.tittle {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+}
+
+img {
+  max-width: 20%;
+  height: auto;
+  border-radius: 10%;
+  text-align: center;
+
+}
+
+
+.contenido .swiper-wrapper {
+  padding: 20px 0;
+}
+
+.contenido .swiper-slide {
+  -webkit-transition: 250ms all;
+  transition: 250ms all;
+}
+
+.contenido .swiper-slide:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  z-index: 1;
+}

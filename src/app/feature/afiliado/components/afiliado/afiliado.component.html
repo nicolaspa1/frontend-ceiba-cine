@@ -4,8 +4,8 @@
 </head>
 
 <body>
-    <div class="">
-        <div class=" animated fadeInDown">
+    <div class="container">
+        <div class="content animated fadeInDown">
             <header>
                 <h1 class="tittle">Manejo De Afiliados</h1>
             </header>
@@ -16,11 +16,8 @@
                     <th>Nombre</th>
                     <th>Tipo Documento</th>
                     <th>Numero Documento</th>
-                    <th>Fecha Nacimiento</th>
                     <th>Email</th>
-                    <th>Direccion</th>
                     <th>Telefono</th>
-                    <th>Fecha Registro</th>
                     <th>Opciones</th>
                 </thead>
                 <tbody class="afiliados">
@@ -29,11 +26,8 @@
                         <td>{{afiliado.nombre}}</td>
                         <td>{{afiliado.tipoDocumento}}</td>
                         <td>{{afiliado.numeroDocumento}}</td>
-                        <td>{{afiliado.fechaNacimiento | date }}</td>
                         <td>{{afiliado.email}}</td>
-                        <td>{{afiliado.direccion}}</td>
                         <td>{{afiliado.telefono}}</td>
-                        <td>{{afiliado.fechaRegistro | date }}</td>  
                         <td>
                             <div class="text-center">
                                 <div class="btn-group">
