@@ -15,6 +15,7 @@ export class AfiliadoService {
   public consultar() {
     return this.http.doGet<Afiliado[]>(`${environment.endpoint}/afiliados`, this.http.optsName('consultar afiliados'));
   }
+  
 
   public guardar(afiliado: Afiliado) {
     return this.http.doPost<Afiliado, boolean>(`${environment.endpoint}/afiliados`, afiliado,
@@ -22,9 +23,14 @@ export class AfiliadoService {
   }
 
   public actualizar(afiliado: Afiliado): Observable<void> {
-    return this.http.doPut<Afiliado, void>(`${environment.endpoint}/afiliados/${afiliado.id}`, afiliado,
+    return this.http.doPut<Afiliado, void>(`${environment.endpoint}/afiliados/`, afiliado,
                                                  this.http.optsName('Actualizar afiliados'));
   }
+  
+  public getAfiliado(id: string) {
+    return this.http.doGet<Afiliado>(`${environment.endpoint}/afiliados/${id}`, this.http.optsName('buscar afiliados'));
+  }
+  
 
   public eliminar(id: number){
     return this.http.doDelete<boolean>(`${environment.endpoint}/afiliados/${id}`,

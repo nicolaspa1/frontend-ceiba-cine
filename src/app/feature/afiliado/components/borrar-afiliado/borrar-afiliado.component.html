@@ -1,1 +1,163 @@
-<p>borrar-afiliado works!</p>
+<h1 class="text-center">Edicion De Afiliados</h1>
+<form [formGroup]="afiliadoForm">
+  <div class="form-group row">
+
+    <div class="form-group col-md-12">
+      <label for="nombre"
+        >Nombre
+        <b class="has-text-danger">*</b>
+      </label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        class="form-control"
+        maxlength="100"
+        [(ngModel)]="afiliado.nombre"
+        formControlName="nombre"
+      />
+    </div>
+    <div class="col-md-7">
+      <label for="tipoDocumento"
+        >Tipo De Documento
+        <b class="has-text-danger">*</b>
+      </label>
+      <select
+        class="combobox form-control"
+        name="tipoDocumento"
+        id="tipoDocumento"
+        [(ngModel)]="afiliado.tipoDocumento"
+        formControlName="tipoDocumento"
+      >
+        <option value="CC" selected="selected">
+          cédula de ciudadanía (CC)
+        </option>
+        <option value="CI">cédula de identidad (CI)</option>
+        <option value="TI">tarjeta de identidad (TI)</option>
+        <option value="TP">tarjeta pasaporte (TP)</option>
+        <option value="RC">registro civil (RC)</option>
+        <option value="CE">cédula de extranjería (CE)</option>
+        <option value="DNI">documento nacional de identidad (DNI)</option>
+        <option value="DUI">documento único de identidad (DUI)</option>
+        <option value="ID">identificación (ID)</option>
+      </select>
+    </div>
+    <div class="form-group col-md-5">
+      <label for="numeroDocumento"
+        >Numero Documento
+        <b class="has-text-danger">*</b>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        name="numeroDocumento"
+        id="numeroDocumento"
+        maxlength="20"
+        [(ngModel)]="afiliado.numeroDocumento"
+        formControlName="numeroDocumento"
+      />
+    </div>
+
+    <div class="form-group col-md-5">
+      <label for="fechaNacimiento"
+        >Fecha Nacimiento
+        <b class="has-text-danger">*</b>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        name="fechaNacimiento"
+        id="fechaNacimiento"
+        maxlength="80"
+        [(ngModel)]="afiliado.fechaNacimiento"
+        formControlName="fechaNacimiento"
+      />
+    </div>
+
+    <div class="form-group col-md-7">
+      <label for="email"
+        >Email
+        <b class="has-text-danger">*</b>
+      </label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="email"
+        maxlength="200"
+        formControlName="email"
+        [(ngModel)]="afiliado.email"
+      />
+      <p *ngIf="afiliadoForm.get('email').hasError('email')">
+        El campo Correo debe ser un correo electrónico válido
+      </p>
+    </div>
+
+    <div class="form-group col-md-7">
+      <label for="direccion"
+        >Direccion
+        <b class="has-text-danger">*</b>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        name="direccion"
+        id="direccion"
+        maxlength="100"
+        [(ngModel)]="afiliado.direccion"
+        formControlName="direccion"
+      />
+      <p *ngIf="afiliadoForm.get('direccion').hasError('min')">
+        El campo Dirección debe tener al menos 10 caracteres
+      </p>
+    </div>
+    <div class="form-group col-md-5">
+      <label for="fechaRegistro"
+        >Fecha Registro
+        <b class="has-text-danger">*</b>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        name="fechaRegistro"
+        id="fechaRegistro"
+        maxlength="80"
+        [(ngModel)]="afiliado.fechaRegistro"
+        formControlName="fechaRegistro"
+      />
+    </div>
+
+    <div class="form-group col-md-5">
+      <label for="telefono"
+        >Telefono
+        <b class="has-text-danger">*</b>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        name="telefono"
+        id="telefono"
+        maxlength="20"
+        formControlName="telefono"
+        [(ngModel)]="afiliado.telefono"
+      />
+      <p *ngIf="afiliadoForm.get('telefono').hasError('minLength')">
+        Campo invalido
+      </p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col text-center">
+      <button
+        [disabled]="!afiliadoForm.valid"
+        class="btn btn-primary"
+        id="btnCrearEntrada"
+        role="button"
+        (click)="crear()"
+        type="submit"
+      >
+        Editar
+      </button>
+    </div>
+  </div>
+</form>

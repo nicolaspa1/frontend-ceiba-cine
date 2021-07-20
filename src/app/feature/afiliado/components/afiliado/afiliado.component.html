@@ -31,7 +31,7 @@
                         <td>
                             <div class="text-center">
                                 <div class="btn-group">
-                                    <button class="btn btn-primary btnEditar">Editar</button>
+                                    <a class="btn btn-primary btnEditar" [routerLink]="['editarafiliado',afiliado.id]">Editar</a>
                                     <button class="btn btn-danger btnEliminar"  (click)="confirmacionEliminar(afiliado.id)">Eliminar</button>
                                 </div>
                             </div>
