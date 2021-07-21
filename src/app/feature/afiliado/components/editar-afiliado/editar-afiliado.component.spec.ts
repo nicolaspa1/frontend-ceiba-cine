@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BorrarAfiliadoComponent } from './borrar-afiliado.component';
+import { EditarAfiliadoComponent } from './editar-afiliado.component';
 
-describe('BorrarAfiliadoComponent', () => {
-  let component: BorrarAfiliadoComponent;
-  let fixture: ComponentFixture<BorrarAfiliadoComponent>;
+describe('EditarAfiliadoComponent', () => {
+  let component: EditarAfiliadoComponent;
+  let fixture: ComponentFixture<EditarAfiliadoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BorrarAfiliadoComponent ]
+      declarations: [ EditarAfiliadoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BorrarAfiliadoComponent);
+    fixture = TestBed.createComponent(EditarAfiliadoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

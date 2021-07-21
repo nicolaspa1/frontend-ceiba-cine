@@ -46,7 +46,7 @@ describe('workspace-project Afiliado', () => {
         page.navigateTo();
         navBar.clickBotonAfiliados();
         //Assert
-        expect(5).toBe(afiliado.contarAfiliados());
+        expect(4).toBe(afiliado.contarAfiliados());
     });
 
     it('Deberia editar afiliado', () => {

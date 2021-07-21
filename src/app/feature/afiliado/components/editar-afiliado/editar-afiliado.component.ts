@@ -16,11 +16,11 @@ import { Afiliado } from "../../shared/model/afiliado";
 import { Observable } from "rxjs";
 
 @Component({
-  selector: "app-borrar-afiliado",
-  templateUrl: "./borrar-afiliado.component.html",
-  styleUrls: ["./borrar-afiliado.component.css"],
+  selector: "app-editar-afiliado",
+  templateUrl: "./editar-afiliado.component.html",
+  styleUrls: ["./editar-afiliado.component.css"],
 })
-export class BorrarAfiliadoComponent implements OnInit {
+export class EditarAfiliadoComponent implements OnInit {
   public listaAfiliados: Observable<Afiliado[]> | undefined;
   afiliadoForm: FormGroup;
   now = this.datePipe.transform(new Date(), "yyyy-MM-dd");

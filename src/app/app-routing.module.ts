@@ -7,7 +7,7 @@ import { AfiliadoComponent } from "./feature/afiliado/components/afiliado/afilia
 import { CrearAfiliadoComponent } from "./feature/afiliado/components/crear-afiliado/crear-afiliado.component";
 import { EntradaComponent } from "./feature/entrada/components/entrada/entrada.component";
 import { CrearEntradaComponent } from "./feature/entrada/components/crear-entrada/crear-entrada.component";
-import { BorrarAfiliadoComponent } from "./feature/afiliado/components/borrar-afiliado/borrar-afiliado.component";
+import { EditarAfiliadoComponent } from "./feature/afiliado/components/editar-afiliado/editar-afiliado.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: "registroafiliado", component: CrearAfiliadoComponent },
   { path: "entrada", component: EntradaComponent },
   { path: "ventaentrada", component: CrearEntradaComponent },
-  { path: "afiliado/editarafiliado/:id", component: BorrarAfiliadoComponent },
+  { path: "afiliado/editarafiliado/:id", component: EditarAfiliadoComponent },
 ];
 
 @NgModule({
