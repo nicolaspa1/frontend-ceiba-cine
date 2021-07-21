@@ -59,8 +59,6 @@ export class BorrarAfiliadoComponent implements OnInit {
   crear() {
     //TODO: Modificar el manejo de errores para que muestre un error al registrar dos afiliados con el mismo numero y tipo de documento
     if (this.afiliadoForm.valid) {
-      // this.afiliado.fechaRegistro = this.now + " 00:00:00";
-      // this.afiliado.fechaNacimiento += " 00:00:00";
        const afiliado = this.afiliadoForm.value;
       this.afiliadoService.actualizar(afiliado).subscribe((afiliado) => {
         console.log(afiliado);

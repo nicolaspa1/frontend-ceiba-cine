@@ -10,7 +10,6 @@ import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
 import { BorrarAfiliadoComponent } from './feature/afiliado/components/borrar-afiliado/borrar-afiliado.component';
 import { CrearAfiliadoComponent } from './feature/afiliado/components/crear-afiliado/crear-afiliado.component';
-import { ListarAfiliadoComponent } from './feature/afiliado/components/listar-afiliado/listar-afiliado.component';
 import { AfiliadoComponent } from './feature/afiliado/components/afiliado/afiliado.component';
 import { CrearEntradaComponent } from './feature/entrada/components/crear-entrada/crear-entrada.component';
 import { EntradaComponent } from './feature/entrada/components/entrada/entrada.component';
@@ -27,7 +26,6 @@ import { DatePipe } from '@angular/common';
     HomeComponent,
     BorrarAfiliadoComponent,
     CrearAfiliadoComponent,
-    ListarAfiliadoComponent,
     AfiliadoComponent,
     CrearEntradaComponent,
     EntradaComponent,

@@ -39,9 +39,4 @@ export class AfiliadoComponent implements OnInit {
     });
   }
 
-  // editarAfiliado(afiliado:Afiliado){
-      
-  // }
-
-
 }

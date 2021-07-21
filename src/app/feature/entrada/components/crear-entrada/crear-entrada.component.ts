@@ -17,9 +17,8 @@ import { Entrada } from "../../shared/model/entrada";
 })
 export class CrearEntradaComponent implements OnInit {
   entradaForm: FormGroup;
-  entrada:Entrada = new Entrada();
+  entrada: Entrada = new Entrada();
   esAfiliado: boolean = false;
-
 
   constructor(
     protected entradaService: EntradaService,
@@ -31,21 +30,17 @@ export class CrearEntradaComponent implements OnInit {
   }
 
   crear() {
-    //TODO: Modificar el manejo de errores para que muestre un error al registrar dos afiliados con el mismo numero y tipo de documento
     if (this.entradaForm.valid) {
       this.entrada.fechaFuncion += " 00:00:00";
-        this.entradaService
-          .guardar(this.entrada)
-          .subscribe((entrada) => {
-            console.log(entrada);
-          });
+      this.entradaService.guardar(this.entrada).subscribe((entrada) => {
+        console.log(entrada);
+      });
 
-        AlertaAPI.procesoExitoso("Entrada vendida con exito!");
-        // Se recarga la pagina al eliminar para que la lista en pantalla se actualice
-        // .then(() => {
-        //     window.location.reload();
-        // });
-
+      AlertaAPI.procesoExitoso("Entrada vendida con exito!");
+      // Se recarga la pagina al eliminar para que la lista en pantalla se actualice
+      // .then(() => {
+      //     window.location.reload();
+      // });
     } else {
       AlertaAPI.error("Error", "Se debe llenar el formulario correctamente");
     }
