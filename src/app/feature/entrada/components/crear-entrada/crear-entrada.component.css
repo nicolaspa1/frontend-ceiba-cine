@@ -36,3 +36,6 @@ form {
     }
   }
   
+  a{
+    cursor:pointer;
+  }

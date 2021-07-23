@@ -9,7 +9,7 @@ var HtmlReporter = require('protractor-beautiful-reporter');
  * @type { import("protractor").Config }
  */
 exports.config = {
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 50000,
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
@@ -21,7 +21,7 @@ exports.config = {
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
-    defaultTimeoutInterval: 30000,
+    defaultTimeoutInterval: 60000,
     print: function() {}
   },
   onPrepare() {

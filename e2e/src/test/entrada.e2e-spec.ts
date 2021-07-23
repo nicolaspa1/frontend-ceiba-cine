@@ -15,15 +15,13 @@ describe('workspace-project Entrada', () => {
 
     it('Deberia crear entrada', () => {
 
-        //Arrange
+        // Arrange
         const NUMERO_FUNCION = '1';
         const PRECIO_FUNCION = '10000';
         const NOMBRE_FUNCION = 'Rapidos y furiosos 9';
         const FECHA_FUNCION = '10-09-2021';
 
-
-
-        //Act
+        // Act
         page.navigateTo();
         navBar.clickBotonCrearEntradas();
         entrada.ingresarNumeroFuncionEntrada(NUMERO_FUNCION);
@@ -32,16 +30,16 @@ describe('workspace-project Entrada', () => {
         entrada.ingresarFechaFuncionEntrada(FECHA_FUNCION);
         entrada.clickBotonCrearEntradas();
 
-        //Assert
-        expect(entrada.clicBotonConfirmacionAlerta()).toEqual('Entrada vendida con exito!');
+        // Assert
+        expect(entrada.capturaTitulo().getText()).toEqual('Entrada vendida con exito!');
         entrada.clicBotonConfirmacionAlerta();
     });
 
     it('Deberia listar entradas', () => {
-        //Arrange-Act
+        // Arrange-Act
         page.navigateTo();
         navBar.clickBotonEntradas();
-        //Assert
+        // Assert
         expect(entrada.contarEntradas()).toBe(entrada.contarEntradas());
     });
 

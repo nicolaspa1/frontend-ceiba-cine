@@ -1,29 +1,29 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-import { AfiliadoService } from "../../shared/service/afiliado.service";
+import { AfiliadoService } from '../../shared/service/afiliado.service';
 import {
   FormGroup,
   FormControl,
   Validators,
   FormBuilder,
-} from "@angular/forms";
+} from '@angular/forms';
 
-import { ActivatedRoute, Params, Router } from "@angular/router";
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { DatePipe } from "@angular/common";
-import { AlertaAPI } from "@shared/alertas/alerta-api";
-import { Afiliado } from "../../shared/model/afiliado";
-import { Observable } from "rxjs";
+import { DatePipe } from '@angular/common';
+import { AlertaAPI } from '@shared/alertas/alerta-api';
+import { Afiliado } from '../../shared/model/afiliado';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: "app-editar-afiliado",
-  templateUrl: "./editar-afiliado.component.html",
-  styleUrls: ["./editar-afiliado.component.css"],
+  selector: 'app-editar-afiliado',
+  templateUrl: './editar-afiliado.component.html',
+  styleUrls: ['./editar-afiliado.component.css'],
 })
 export class EditarAfiliadoComponent implements OnInit {
   public listaAfiliados: Observable<Afiliado[]> | undefined;
   afiliadoForm: FormGroup;
-  now = this.datePipe.transform(new Date(), "yyyy-MM-dd");
+  now = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
   afiliado: Afiliado = new Afiliado();
   id:string;
 
@@ -57,20 +57,19 @@ export class EditarAfiliadoComponent implements OnInit {
   }
 
   crear() {
-    //TODO: Modificar el manejo de errores para que muestre un error al registrar dos afiliados con el mismo numero y tipo de documento
     if (this.afiliadoForm.valid) {
        const afiliado = this.afiliadoForm.value;
       this.afiliadoService.actualizar(afiliado).subscribe((afiliado) => {
         console.log(afiliado);
       });
 
-      AlertaAPI.procesoExitoso("Usuario actualizado con exito!")
+      AlertaAPI.procesoExitoso('Usuario actualizado con exito!')
       //Se navega a la pagina de vista de afiliados
       .then(() => {
           this.router.navigate(['./afiliado']);
       });
     } else {
-      AlertaAPI.error("Error", "Se debe llenar el formulario correctamente");
+      AlertaAPI.error('Error', 'Se debe llenar el formulario correctamente');
     }
   }
 
@@ -78,14 +77,14 @@ export class EditarAfiliadoComponent implements OnInit {
     //TODO: HACER VALIDACIONES DE LOS CAMPOS CON PARRAFOS ROJOS EN EL HTML
     this.afiliadoForm = this.formBuilder.group({
       id:this.id,
-      nombre: ["", [Validators.required]],
-      tipoDocumento: new FormControl("", [Validators.required]),
-      numeroDocumento: new FormControl("", [Validators.required]),
-      fechaNacimiento: new FormControl("", [Validators.required]),
-      email: new FormControl("", [Validators.required, Validators.email]),
-      direccion: new FormControl("", [Validators.required]),
-      telefono: new FormControl("", [Validators.required]),
-      fechaRegistro: new FormControl("", [Validators.required])
+      nombre: ['', [Validators.required]],
+      tipoDocumento: new FormControl('', [Validators.required]),
+      numeroDocumento: new FormControl('', [Validators.required]),
+      fechaNacimiento: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      direccion: new FormControl('', [Validators.required]),
+      telefono: new FormControl('', [Validators.required]),
+      fechaRegistro: new FormControl('', [Validators.required])
     });
   }
 }

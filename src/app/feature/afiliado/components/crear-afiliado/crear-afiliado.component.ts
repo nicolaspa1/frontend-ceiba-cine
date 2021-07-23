@@ -1,25 +1,25 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-import { AfiliadoService } from "../../shared/service/afiliado.service";
+import { AfiliadoService } from '../../shared/service/afiliado.service';
 import {
   FormGroup,
   FormControl,
   Validators,
   FormBuilder,
-} from "@angular/forms";
+} from '@angular/forms';
 
-import { DatePipe } from "@angular/common";
-import { AlertaAPI } from "@shared/alertas/alerta-api";
-import { Afiliado } from "../../shared/model/afiliado";
+import { DatePipe } from '@angular/common';
+import { AlertaAPI } from '@shared/alertas/alerta-api';
+import { Afiliado } from '../../shared/model/afiliado';
 
 @Component({
-  selector: "app-crear-afiliado",
-  templateUrl: "./crear-afiliado.component.html",
-  styleUrls: ["./crear-afiliado.component.css"],
+  selector: 'app-crear-afiliado',
+  templateUrl: './crear-afiliado.component.html',
+  styleUrls: ['./crear-afiliado.component.css'],
 })
 export class CrearAfiliadoComponent implements OnInit {
   afiliadoForm: FormGroup;
-  now = this.datePipe.transform(new Date(), "yyyy-MM-dd");
+  now = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
   afiliado: Afiliado = new Afiliado();
 
   constructor(
@@ -33,34 +33,33 @@ export class CrearAfiliadoComponent implements OnInit {
   }
 
   crear() {
-    //TODO: Modificar el manejo de errores para que muestre un error al registrar dos afiliados con el mismo numero y tipo de documento
     if (this.afiliadoForm.valid) {
-      this.afiliado.fechaRegistro = this.now + " 00:00:00";
-      this.afiliado.fechaNacimiento += " 00:00:00";
+      this.afiliado.fechaRegistro = this.now + ' 00:00:00';
+      this.afiliado.fechaNacimiento += ' 00:00:00';
       this.afiliadoService.guardar(this.afiliado).subscribe((afiliado) => {
         console.log(afiliado);
       });
 
-      AlertaAPI.procesoExitoso("Usuario creado con exito!")
+      AlertaAPI.procesoExitoso('Usuario creado con exito!')
       //Se recarga la pagina al eliminar para que la lista en pantalla se actualice
       .then(() => {
           window.location.reload();
       });
     } else {
-      AlertaAPI.error("Error", "Se debe llenar el formulario correctamente");
+      AlertaAPI.error('Error', 'Se debe llenar el formulario correctamente');
     }
   }
 
   private construirFormularioAfiliado() {
     //TODO: HACER VALIDACIONES DE LOS CAMPOS CON PARRAFOS ROJOS EN EL HTML
     this.afiliadoForm = this.formBuilder.group({
-      nombre: ["", [Validators.required]],
-      tipoDocumento: new FormControl("", [Validators.required]),
-      numeroDocumento: new FormControl("", [Validators.required]),
-      fechaNacimiento: new FormControl("", [Validators.required]),
-      email: new FormControl("", [Validators.required, Validators.email]),
-      direccion: new FormControl("", [Validators.required]),
-      telefono: new FormControl("", [Validators.required]),
+      nombre: ['', [Validators.required]],
+      tipoDocumento: new FormControl('', [Validators.required]),
+      numeroDocumento: new FormControl('', [Validators.required]),
+      fechaNacimiento: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      direccion: new FormControl('', [Validators.required]),
+      telefono: new FormControl('', [Validators.required]),
       fechaRegistro: this.now,
     });
   }

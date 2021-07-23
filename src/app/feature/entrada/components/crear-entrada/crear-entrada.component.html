@@ -64,8 +64,10 @@
         formControlName="fechaFuncion"
       />
     </div>
-
-    <div class="col text-center col-md-12">
+    <div class="form-group col-md-5">
+      <a class="checkbox" (click)="checkValue()">{{ mensaje }}</a>
+    </div>
+    <div class="col text-center col-md-12" *ngIf="!esAfiliado">
       <button
         [disabled]="!entradaForm.valid"
         class="btn btn-primary"
@@ -75,6 +77,19 @@
         type="submit"
       >
         Crear
+      </button>
+    </div>
+
+    <div class="col text-center col-md-12" *ngIf="esAfiliado">
+      <button
+        [disabled]="!entradaForm.valid"
+        class="btn btn-primary"
+        id="btnCrearEntradaAfiliado"
+        role="button"
+        (click)="crear()"
+        type="submit"
+      >
+        Crear Con Afiliado
       </button>
     </div>
   </div>
