@@ -5,9 +5,7 @@ import { Entrada } from '../model/entrada';
 // import { Afiliado } from '../../../afiliado/shared/model/afiliado';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class EntradaService {
 
   constructor(private http: HttpService) {}

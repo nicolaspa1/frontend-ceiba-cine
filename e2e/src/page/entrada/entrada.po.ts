@@ -2,6 +2,8 @@ import { by, element } from 'protractor';
 
 export class EntradaPage {
   private linkCrearEntradas = element(by.id('btnCrearEntrada'));
+  private btnIrAVentaEntrada = element(by.id('linkCrearEntrada'));
+  private btnIrAListadoEntrada = element(by.id('linkListarEntrada'));
   private inputNumeroFuncionEntrada = element(by.id('numeroFuncion'));
   private inputPrecioEntrada = element(by.id('precio'));
   private inputNombrePeliculaEntrada = element(by.id('nombrePelicula'));
@@ -12,6 +14,12 @@ export class EntradaPage {
 
   async clickBotonCrearEntradas() {
     await this.linkCrearEntradas.click();
+  }
+  async clickBotonIrAVentaEntrada() {
+    await this.btnIrAVentaEntrada.click();
+  }
+  async clickBotonIrAListadoEntrada() {
+    await this.btnIrAListadoEntrada.click();
   }
 
   async ingresarNumeroFuncionEntrada(numeroFuncion) {

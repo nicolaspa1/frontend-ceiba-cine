@@ -1,0 +1,42 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.css" integrity="sha512-gFn7XRm5v3GlgOwAQ80SXDT8pyg6uaV9JbW2OkNx5Im2jR8zx2X/3DbHymcZnUraU+klZjRJqNfNkFN7SyR3fg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="content animated fadeInDown">
+            <header>
+                <h1 class="tittle">Entradas Vendidas</h1>
+            </header>
+
+            <table class="table">
+                <thead>
+                    <th>Id</th>
+                    <th>Numero Funcion</th>
+                    <th>Precio</th>
+                    <th>Nombre Pelicula</th>
+                    <th>Fecha Funcion</th>
+                    <th>Opciones</th>
+                </thead>
+                <tbody class="entradas">
+                    <tr  *ngFor="let entrada of listaEntradas | async">
+                        <td>{{entrada.id}}</td>
+                        <td>{{entrada.numeroFuncion}}</td>
+                        <td>{{entrada.precio}}</td>
+                        <td>{{entrada.nombrePelicula}}</td>
+                        <td>{{entrada.fechaFuncion | date }}</td>
+                        <td>
+                            <div class="text-center">
+                                <div class="btn-group">
+                                    <!-- TODO: Cambiar los botones segun la logica del negocio -->
+                                    <button class="btn btn-danger btnEliminar"  (click)="confirmacionEliminar(entrada.id)">Eliminar</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

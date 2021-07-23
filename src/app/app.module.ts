@@ -7,12 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from '@home/home.component';
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
-import { EditarAfiliadoComponent } from './feature/afiliado/components/editar-afiliado/editar-afiliado.component';
-import { CrearAfiliadoComponent } from './feature/afiliado/components/crear-afiliado/crear-afiliado.component';
-import { AfiliadoComponent } from './feature/afiliado/components/afiliado/afiliado.component';
-import { CrearEntradaComponent } from './feature/entrada/components/crear-entrada/crear-entrada.component';
-import { EntradaComponent } from './feature/entrada/components/entrada/entrada.component';
 import { BannerComponent } from './feature/home/banner/banner.component';
+// import { EditarAfiliadoComponent } from './feature/afiliado/components/editar-afiliado/editar-afiliado.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 
@@ -20,12 +16,8 @@ import { DatePipe } from '@angular/common';
   declarations: [
     AppComponent,
     HomeComponent,
-    EditarAfiliadoComponent,
-    CrearAfiliadoComponent,
-    AfiliadoComponent,
-    CrearEntradaComponent,
-    EntradaComponent,
     BannerComponent,
+    // EditarAfiliadoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { AfiliadoService } from '../../shared/service/afiliado.service';
 import {
   FormGroup,
@@ -25,13 +24,13 @@ export class EditarAfiliadoComponent implements OnInit {
   afiliadoForm: FormGroup;
   now = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
   afiliado: Afiliado = new Afiliado();
-  id:string;
+  id: string;
 
   constructor(
     protected afiliadoService: AfiliadoService,
     protected formBuilder: FormBuilder,
     protected datePipe: DatePipe,
-    private router:Router,
+    private router: Router,
     private activeRoute: ActivatedRoute
   ) {
     this.buildForm();
@@ -42,7 +41,7 @@ export class EditarAfiliadoComponent implements OnInit {
       this.id = params.id;
       this.afiliadoService.getAfiliado(this.id).subscribe((afiliado) => {
         this.afiliadoForm.patchValue({
-          id:this.id,
+          id: this.id,
           direccion: afiliado.direccion,
           email: afiliado.email,
           nombre: afiliado.nombre,
@@ -58,25 +57,24 @@ export class EditarAfiliadoComponent implements OnInit {
 
   crear() {
     if (this.afiliadoForm.valid) {
-       const afiliado = this.afiliadoForm.value;
+      const afiliado = this.afiliadoForm.value;
       this.afiliadoService.actualizar(afiliado).subscribe((afiliado) => {
         console.log(afiliado);
       });
 
       AlertaAPI.procesoExitoso('Usuario actualizado con exito!')
-      //Se navega a la pagina de vista de afiliados
-      .then(() => {
+        // Se navega a la pagina de vista de afiliados
+        .then(() => {
           this.router.navigate(['./afiliado']);
-      });
+        });
     } else {
       AlertaAPI.error('Error', 'Se debe llenar el formulario correctamente');
     }
   }
 
   private buildForm() {
-    //TODO: HACER VALIDACIONES DE LOS CAMPOS CON PARRAFOS ROJOS EN EL HTML
     this.afiliadoForm = this.formBuilder.group({
-      id:this.id,
+      id: this.id,
       nombre: ['', [Validators.required]],
       tipoDocumento: new FormControl('', [Validators.required]),
       numeroDocumento: new FormControl('', [Validators.required]),
@@ -84,7 +82,7 @@ export class EditarAfiliadoComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       direccion: new FormControl('', [Validators.required]),
       telefono: new FormControl('', [Validators.required]),
-      fechaRegistro: new FormControl('', [Validators.required])
+      fechaRegistro: new FormControl('', [Validators.required]),
     });
   }
 }

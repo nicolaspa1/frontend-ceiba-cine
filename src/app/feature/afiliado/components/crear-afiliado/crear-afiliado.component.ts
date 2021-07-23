@@ -41,7 +41,7 @@ export class CrearAfiliadoComponent implements OnInit {
       });
 
       AlertaAPI.procesoExitoso('Usuario creado con exito!')
-      //Se recarga la pagina al eliminar para que la lista en pantalla se actualice
+      // Se recarga la pagina al eliminar para que la lista en pantalla se actualice
       .then(() => {
           window.location.reload();
       });
@@ -51,7 +51,6 @@ export class CrearAfiliadoComponent implements OnInit {
   }
 
   private construirFormularioAfiliado() {
-    //TODO: HACER VALIDACIONES DE LOS CAMPOS CON PARRAFOS ROJOS EN EL HTML
     this.afiliadoForm = this.formBuilder.group({
       nombre: ['', [Validators.required]],
       tipoDocumento: new FormControl('', [Validators.required]),

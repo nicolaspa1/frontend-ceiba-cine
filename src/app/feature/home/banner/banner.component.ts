@@ -1,14 +1,13 @@
-import { Component, OnInit,AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Swiper } from 'swiper';
 
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.css']
+  styleUrls: ['./banner.component.css'],
 })
-export class BannerComponent implements OnInit,AfterViewInit {
-
-  mySwiper:Swiper;
+export class BannerComponent implements OnInit, AfterViewInit {
+  mySwiper: Swiper;
 
   images: string[] = [
     '../../assets/img/black-widow.jpg',
@@ -18,12 +17,10 @@ export class BannerComponent implements OnInit,AfterViewInit {
     '../../assets/img/angel-de-mi-vida.jpg',
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+  ngAfterViewInit() {
+    this.mySwiper = new Swiper('.swiper-container');
   }
-  ngAfterViewInit(){
-    this.mySwiper= new Swiper('.swiper-container');
-  }
-
 }

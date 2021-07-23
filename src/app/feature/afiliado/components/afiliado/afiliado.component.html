@@ -1,40 +1,38 @@
-
-<section>
-    <div class="container">
-        <div class="content animated fadeInDown">
-            <header>
-                <h1 class="tittle">Manejo De Afiliados</h1>
-            </header>
-
-            <table class="table">
-                <thead>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Tipo Documento</th>
-                    <th>Numero Documento</th>
-                    <th>Email</th>
-                    <th>Telefono</th>
-                    <th>Opciones</th>
-                </thead>
-                <tbody class="afiliados">
-                    <tr  *ngFor="let afiliado of listaAfiliados | async">
-                        <td>{{afiliado.id}}</td>
-                        <td>{{afiliado.nombre}}</td>
-                        <td>{{afiliado.tipoDocumento}}</td>
-                        <td>{{afiliado.numeroDocumento}}</td>
-                        <td>{{afiliado.email}}</td>
-                        <td>{{afiliado.telefono}}</td>
-                        <td>
-                            <div class="text-center">
-                                <div class="btn-group">
-                                    <a class="btn btn-primary btnEditar" id="btnIrEditarAfiliado" [routerLink]="['editarafiliado',afiliado.id]">Editar</a>
-                                    <button class="btn btn-danger btnEliminar"  (click)="confirmacionEliminar(afiliado.id)">Eliminar</button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>    
-                </tbody>
-            </table>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              id="linkAfiliado"
+              routerLink="./"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Afiliado</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              id="linkCrearAfiliado"
+              class="nav-link"
+              routerLink="./crear"
+              routerLinkActive="active"
+              >Registrar Afiliados</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              id="linkListarAfiliado"
+              class="nav-link"
+              routerLink="./listar"
+              routerLinkActive="active"
+              >Listar Afiliados</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
-</section>
+  </nav>
+  <router-outlet></router-outlet>
+  

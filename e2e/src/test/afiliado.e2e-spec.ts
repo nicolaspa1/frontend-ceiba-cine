@@ -25,7 +25,8 @@ describe('workspace-project Afiliado', () => {
 
     // Act
     page.navigateTo();
-    navBar.clickBotonCrearAfiliados();
+    navBar.clickBotonAfiliados();
+    afiliado.clickBotonIrAlRegistroAfiliado();
     afiliado.ingresarNombreAfiliado(NOMBRE_AFILIADO);
     afiliado.ingresarTipoDocumentoAfiliado(TIPO_DOCUMENTO_AFILIADO);
     afiliado.ingresarNumeroDocumentoAfiliado(NUMERO_DOCUMENTO_AFILIADO);
@@ -46,6 +47,7 @@ describe('workspace-project Afiliado', () => {
     // Arrange-Act
     page.navigateTo();
     navBar.clickBotonAfiliados();
+    afiliado.clickBotonIrAlListadoAfiliado();
     // Assert
     expect(afiliado.contarAfiliados()).toBe(afiliado.contarAfiliados());
   });
@@ -56,6 +58,7 @@ describe('workspace-project Afiliado', () => {
     // Act
     page.navigateTo();
     navBar.clickBotonAfiliados();
+    afiliado.clickBotonIrAlListadoAfiliado();
     afiliado.clickBotonIrEditarAfiliado();
     afiliado.ingresarNombreAfiliado(NOMBRE_AFILIADO_EDITADO);
     afiliado.clickBotonEditarAfiliado();

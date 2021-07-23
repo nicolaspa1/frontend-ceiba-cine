@@ -1,0 +1,39 @@
+<section>
+  <div class="container">
+      <div class="content animated fadeInDown">
+          <header>
+              <h1 class="tittle">Manejo De Afiliados</h1>
+          </header>
+
+          <table class="table">
+              <thead>
+                  <th>Id</th>
+                  <th>Nombre</th>
+                  <th>Tipo Documento</th>
+                  <th>Numero Documento</th>
+                  <th>Email</th>
+                  <th>Telefono</th>
+                  <th>Opciones</th>
+              </thead>
+              <tbody class="afiliados">
+                  <tr  *ngFor="let afiliado of listaAfiliados | async">
+                      <td>{{afiliado.id}}</td>
+                      <td>{{afiliado.nombre}}</td>
+                      <td>{{afiliado.tipoDocumento}}</td>
+                      <td>{{afiliado.numeroDocumento}}</td>
+                      <td>{{afiliado.email}}</td>
+                      <td>{{afiliado.telefono}}</td>
+                      <td>
+                          <div class="text-center">
+                              <div class="btn-group">
+                                  <a class="btn btn-primary btnEditar" id="btnIrEditarAfiliado" [routerLink]="['editarafiliado',afiliado.id]">Editar</a>
+                                  <button class="btn btn-danger btnEliminar"  (click)="confirmacionEliminar(afiliado.id)">Eliminar</button>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>    
+              </tbody>
+          </table>
+      </div>
+  </div>
+</section>

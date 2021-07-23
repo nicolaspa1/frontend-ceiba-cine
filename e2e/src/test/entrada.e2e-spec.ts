@@ -23,7 +23,8 @@ describe('workspace-project Entrada', () => {
 
         // Act
         page.navigateTo();
-        navBar.clickBotonCrearEntradas();
+        navBar.clickBotonEntradas();
+        entrada.clickBotonIrAVentaEntrada();
         entrada.ingresarNumeroFuncionEntrada(NUMERO_FUNCION);
         entrada.ingresarPrecioEntrada(PRECIO_FUNCION);
         entrada.ingresarNombrePeliculaEntrada(NOMBRE_FUNCION);
@@ -39,6 +40,7 @@ describe('workspace-project Entrada', () => {
         // Arrange-Act
         page.navigateTo();
         navBar.clickBotonEntradas();
+        entrada.clickBotonIrAListadoEntrada();
         // Assert
         expect(entrada.contarEntradas()).toBe(entrada.contarEntradas());
     });

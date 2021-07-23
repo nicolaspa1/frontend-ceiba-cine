@@ -58,7 +58,6 @@ export class CrearEntradaComponent implements OnInit {
   }
 
   private construirFormularioEntrada() {
-    //TODO: HACER VALIDACIONES DE LOS CAMPOS CON PARRAFOS ROJOS EN EL HTML
     this.entradaForm = this.formBuilder.group({
       numeroFuncion: new FormControl('', [Validators.required]),
       precio: new FormControl('', [Validators.required]),
