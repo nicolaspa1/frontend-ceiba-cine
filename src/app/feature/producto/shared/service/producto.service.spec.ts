@@ -42,8 +42,8 @@ describe('ProductoService', () => {
 
   it('deberia crear un producto', () => {
     const dummyProducto = new Producto('1', 'Producto 1');
-    service.guardar(dummyProducto).subscribe((respuesta) => {
-      expect(respuesta).toEqual(true);
+    service.guardar(dummyProducto).subscribe((resultado) => {
+      expect(resultado).toEqual(true);
     });
     const req = httpMock.expectOne(apiEndpointProductos);
     expect(req.request.method).toBe('POST');
@@ -52,8 +52,8 @@ describe('ProductoService', () => {
 
   it('deberia eliminar un producto', () => {
     const dummyProducto = new Producto('1', 'Producto 1');
-    service.eliminar(dummyProducto).subscribe((respuesta) => {
-      expect(respuesta).toEqual(true);
+    service.eliminar(dummyProducto).subscribe((resultado) => {
+      expect(resultado).toEqual(true);
     });
     const req = httpMock.expectOne(`${apiEndpointProductos}/1`);
     expect(req.request.method).toBe('DELETE');

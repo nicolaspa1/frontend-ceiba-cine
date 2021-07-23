@@ -15,9 +15,9 @@ describe('workspace-project Afiliado', () => {
 
   it('Deberia crear afiliado', () => {
     // Arrange
-    const NOMBRE_AFILIADO = 'Nicolas Pinzon Aparicio';
+    const NOMBRE_AFILIADO = 'Luz Carolina Aparicio';
     const TIPO_DOCUMENTO_AFILIADO = 'CC';
-    const NUMERO_DOCUMENTO_AFILIADO = '1006428654';
+    const NUMERO_DOCUMENTO_AFILIADO = '123456789';
     const FECHA_NACIMIENTO_AFILIADO = '10-05-2000';
     const EMAIL_AFILIADO = 'nicolaspa@gmail.com';
     const DIRECCION_AFILIADO = 'Calle 3 # 3 -3';
